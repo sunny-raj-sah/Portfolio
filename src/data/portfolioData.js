@@ -78,7 +78,7 @@ export const experience = [
     company: "Tech Mahindra COE",
     role: "Software Development Trainee",
     period: "2025",
-    location: "Remote",
+    location: "COE Center",
     points: [
       "Completed hands-on training in Java, Spring Boot, React, and Flutter.",
       "Built full-stack projects and strengthened software engineering fundamentals.",
