@@ -197,7 +197,7 @@ export const projects = [
 
 export const socials = {
   github: "https://github.com/sunny-raj-sah",
-  linkedin: "https://linkedin.com/in/sunny-raj",
+  linkedin: "https://linkedin.com/in/sunny-raj-885588313",
   twitter: "#",
   email: "mailto:sunnyraj01000@gmail.com",
 };
