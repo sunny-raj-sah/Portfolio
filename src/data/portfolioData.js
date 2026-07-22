@@ -21,7 +21,7 @@ export const profile = {
   email: "sunnyraj01000@gmail.com",
   github: "https://github.com/sunny-raj-sah",
   linkedin: "https://linkedin.com/in/sunny-raj",
-  resumeUrl: "#",
+  resumeUrl: "https://drive.google.com/file/d/1nvMb1oACJ_4nvnc09d2xJlXoB4FLVL70/view?usp=sharing",
   avatarInitials: "SR",
   commitHash: "sr2026a",
 };
@@ -78,7 +78,7 @@ export const experience = [
     company: "Tech Mahindra COE",
     role: "Software Development Trainee",
     period: "2025",
-    location: "COE Center",
+    location: "COE Center, GIET University",
     points: [
       "Completed hands-on training in Java, Spring Boot, React, and Flutter.",
       "Built full-stack projects and strengthened software engineering fundamentals.",
@@ -143,10 +143,10 @@ export const projects = [
     ],
     stars: "Featured",
     link: "#",
-    repo: "#",
+    repo: "https://github.com/sunny-raj-sah/AI-Document-Q-A-System.git",
   },
   {
-    name: "AI Admin Query Assistant",
+    name: "LangChain-AI Admin Query Assistant",
     hash: "ai002",
     description:
       "Developed an AI-powered admin dashboard enabling natural-language queries over educational datasets with RBAC and dynamic analytics.",
@@ -159,7 +159,7 @@ export const projects = [
     ],
     stars: "Featured",
     link: "#",
-    repo: "#",
+    repo: "https://github.com/sunny-raj-sah/LangChain-AI-Admin-Query-Assistant.git",
   },
   {
     name: "Real-Time Chat Application",
@@ -175,7 +175,7 @@ export const projects = [
     ],
     stars: "Featured",
     link: "#",
-    repo: "#",
+    repo: "https://github.com/sunny-raj-sah/Real-time-chat-app.git",
   },
   {
     name: "Real-Time Device Tracker",
@@ -191,7 +191,7 @@ export const projects = [
     ],
     stars: "Featured",
     link: "#",
-    repo: "#",
+    repo: "https://github.com/sunny-raj-sah/Real-time-device-tracker.git",
   },
 ];
 

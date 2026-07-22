@@ -13,9 +13,9 @@ export default function Footer() {
           <a href={socials.linkedin} className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <FiLinkedin />
           </a>
-          <a href={socials.twitter} className="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+          {/* <a href={socials.twitter} className="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
             <FiTwitter />
-          </a>
+          </a> */}
           <a href={socials.email} className="social-icon" aria-label="Email">
             <FiMail />
           </a>

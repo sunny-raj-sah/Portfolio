@@ -11,7 +11,7 @@ export default function Experience() {
       <Container className="container-narrow reveal" ref={ref}>
         <SectionHead
           hash="9a1f5c3"
-          title="// experience"
+          title="// experience & training"
           subtitle="$ git log --author=me --oneline"
         />
         <div className="timeline">

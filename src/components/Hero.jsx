@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { FiArrowDownCircle } from "react-icons/fi";
 import { profile } from "../data/portfolioData";
 
 function useTypedRoles(roles) {
@@ -64,6 +65,17 @@ export default function Hero() {
                 Get in touch
               </Button>
             </div>
+
+             <a
+              href={profile.resumeUrl}
+              className="resume-link mt-3"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              <FiArrowDownCircle aria-hidden="true" />
+               Download resume
+            </a>
           </Col>
 
           <Col lg={5}>
