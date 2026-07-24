@@ -130,20 +130,23 @@ export const skills = {
 
 export const projects = [
   {
-    name: "AI Document Q&A System",
+    name: "PDF Grounded AI Document Q&A RAG System",
     hash: "rag001",
     description:
       "Built a Retrieval-Augmented Generation (RAG) application with LangChain, embeddings, vector databases, and LLM APIs for semantic document search and AI-powered question answering.",
     tags: [
-      "Node.js",
-      "LangChain",
-      "RAG",
-      "Vector DB",
-      "OpenAI",
+    "React",
+    "Node.js",
+    "Express",
+    "RAG",
+    "Hugging Face",
+    "Groq",
+    "LLM",
+    "Embeddings",
     ],
     stars: "Featured",
-    link: "#",
-    repo: "https://github.com/sunny-raj-sah/AI-Document-Q-A-System.git",
+    link: "https://ai-powered-rag-system-for-grounded.vercel.app/",
+    repo: "https://github.com/sunny-raj-sah/AI-powered-RAG-system-for-grounded-PDF-question-answering.git",
   },
   {
     name: "LangChain-AI Admin Query Assistant",
