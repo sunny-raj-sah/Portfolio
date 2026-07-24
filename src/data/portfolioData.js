@@ -148,7 +148,57 @@ export const projects = [
     link: "https://ai-powered-rag-system-for-grounded.vercel.app/",
     repo: "https://github.com/sunny-raj-sah/AI-powered-RAG-system-for-grounded-PDF-question-answering.git",
   },
+   {
+    name: "Real-Time Chat Application",
+    hash: "chat004",
+    description:
+      "Built a real-time chat platform with public rooms, private 1:1 messaging, live typing indicators, and dynamic room creation with member invites, using React and Socket.io over WebSockets.",
+    tags: [
+      "React",
+      "Node.js",
+      "Express",
+      "Socket.io",
+      "Bootstrap",
+    ],
+    stars: "Featured",
+    link: "https://realtime-chat-client-uzfk.onrender.com/",
+    repo: "https://github.com/sunny-raj-sah/RealTime-Chat.git",
+  },
+  // {
+  //   name: "Real-Time Device Tracker",
+  //   hash: "gps004",
+  //   description:
+  //     "Created a live GPS tracking system with React, Socket.io, Leaflet.js, and Google Maps APIs for monitoring multiple devices in real time.",
+  //   tags: [
+  //     "React",
+  //     "Node.js",
+  //     "Socket.io",
+  //     "Leaflet",
+  //     "Google Maps",
+  //   ],
+  //   stars: "Featured",
+  //   link: "#",
+  //   repo: "https://github.com/sunny-raj-sah/Real-time-device-tracker.git",
+  // },
   {
+  name: "Trendora - Full Stack E-Commerce Platform",
+  hash: "ecom001",
+  description:
+    "Built a full-stack e-commerce application with secure JWT authentication, product search, category filtering, shopping cart, wishlist management, and responsive UI using the MERN stack.",
+  tags: [
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT",
+    "Bootstrap",
+    "Context API"
+  ],
+  stars: "Featured",
+  link: "https://mern-shopping-site-43xo.vercel.app/",
+  repo: "https://github.com/sunny-raj-sah/MERN-Shopping-Site.git",
+},
+{
     name: "LangChain-AI Admin Query Assistant",
     hash: "ai002",
     description:
@@ -161,40 +211,8 @@ export const projects = [
       "RBAC",
     ],
     stars: "Featured",
-    link: "#",
+    link: "https://ai-powered-admin-panel.onrender.com/",
     repo: "https://github.com/sunny-raj-sah/LangChain-AI-Admin-Query-Assistant.git",
-  },
-  {
-    name: "Real-Time Chat Application",
-    hash: "chat003",
-    description:
-      "Built a JWT-secured real-time chat platform supporting private messaging, group chat, user authentication, and persistent chat history using Socket.io.",
-    tags: [
-      "Node.js",
-      "Express",
-      "Socket.io",
-      "MongoDB",
-      "JWT",
-    ],
-    stars: "Featured",
-    link: "#",
-    repo: "https://github.com/sunny-raj-sah/Real-time-chat-app.git",
-  },
-  {
-    name: "Real-Time Device Tracker",
-    hash: "gps004",
-    description:
-      "Created a live GPS tracking system with React, Socket.io, Leaflet.js, and Google Maps APIs for monitoring multiple devices in real time.",
-    tags: [
-      "React",
-      "Node.js",
-      "Socket.io",
-      "Leaflet",
-      "Google Maps",
-    ],
-    stars: "Featured",
-    link: "#",
-    repo: "https://github.com/sunny-raj-sah/Real-time-device-tracker.git",
   },
 ];
 

@@ -74,7 +74,7 @@ export default function Hero() {
               download
             >
               <FiArrowDownCircle aria-hidden="true" />
-               Download resume
+                view resume
             </a>
           </Col>
 
