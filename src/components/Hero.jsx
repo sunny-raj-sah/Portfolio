@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import {  FiEye } from "react-icons/fi";
+// import {  FiEye } from "react-icons/fi";
 import { profile } from "../data/portfolioData";
 
 function useTypedRoles(roles) {
@@ -53,8 +53,9 @@ export default function Hero() {
             <h1 className="hero-name">{profile.name}</h1>
             <p className="hero-tagline">{profile.tagline}</p>
             <div className="d-flex gap-3 mt-4 flex-wrap">
-              <Button href="#projects" className="btn-mint" size="lg">
-                View projects
+              {/* <Button href="#projects" className="btn-mint" size="lg"> */}
+                <Button href={profile.resumeUrl} className="btn-mint" size="lg">
+            View Resume
               </Button>
               <Button
                 href="#contact"
@@ -66,7 +67,7 @@ export default function Hero() {
               </Button>
             </div>
 
-             <a
+             {/* <a
               href={profile.resumeUrl}
               className="resume-link mt-3"
               target="_blank"
@@ -75,7 +76,7 @@ export default function Hero() {
             >
                <FiEye aria-hidden="true" />
   <span>View Resume</span>
-            </a>
+            </a> */}
           </Col>
 
           <Col lg={5}>
