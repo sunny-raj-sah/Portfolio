@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { FiArrowDownCircle } from "react-icons/fi";
+import {  FiEye } from "react-icons/fi";
 import { profile } from "../data/portfolioData";
 
 function useTypedRoles(roles) {
@@ -73,8 +73,8 @@ export default function Hero() {
               rel="noopener noreferrer"
               download
             >
-              <FiArrowDownCircle aria-hidden="true" />
-                view resume
+               <FiEye aria-hidden="true" />
+  <span>View Resume</span>
             </a>
           </Col>
 

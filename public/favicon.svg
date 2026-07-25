@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0F172A"/>
+
+  <!-- Code Symbol -->
+  <text x="32" y="24"
+        text-anchor="middle"
+        font-size="16"
+        font-family="Arial, sans-serif"
+        fill="#3B82F6">
+    &lt;/&gt;
+  </text>
+
+  <!-- Initials -->
+  <text x="32" y="46"
+        text-anchor="middle"
+        font-size="20"
+        font-weight="bold"
+        font-family="Arial, sans-serif"
+        fill="#FFFFFF">
+    SR
+  </text>
+</svg>
