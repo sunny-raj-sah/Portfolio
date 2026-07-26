@@ -21,8 +21,8 @@ export const profile = {
   email: "sunnyraj01000@gmail.com",
   github: "https://github.com/sunny-raj-sah",
   linkedin: "https://linkedin.com/in/sunny-raj",
-  // resumeUrl: "https://drive.google.com/file/d/1nvMb1oACJ_4nvnc09d2xJlXoB4FLVL70/view?usp=sharing",
-  resumeUrl:  "/Sunny_Raj__Resume.pdf",
+  resumeUrl: "https://drive.google.com/file/d/1nvMb1oACJ_4nvnc09d2xJlXoB4FLVL70/view?usp=sharing",
+  // resumeUrl:  "/Sunny_Raj__Resume.pdf",
 
   avatarInitials: "SR",
   commitHash: "sr2026a",

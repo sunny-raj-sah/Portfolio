@@ -54,7 +54,7 @@ export default function Hero() {
             <p className="hero-tagline">{profile.tagline}</p>
             <div className="d-flex gap-3 mt-4 flex-wrap">
               {/* <Button href="#projects" className="btn-mint" size="lg"> */}
-                <Button href={profile.resumeUrl} className="btn-mint" size="lg">
+                <Button href={profile.resumeUrl}  target="_blank" className="btn-mint" size="lg">
             View Resume
               </Button>
               <Button
