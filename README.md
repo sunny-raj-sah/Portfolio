@@ -18,7 +18,7 @@ To build for production:
 npm run build
 npm run preview   # preview the production build locally
 ```
-## [Deployment link](https://portfolio-eight-vert-40.vercel.app/)
+## Deployment link (https://portfolio-eight-vert-40.vercel.app/)
 
 ## Where to put your real info
 
