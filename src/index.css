@@ -471,3 +471,11 @@ a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  row-gap: 10px;
+}

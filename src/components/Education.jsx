@@ -15,7 +15,7 @@ export default function Education() {
             <div className="timeline-item" key={ed.hash}>
               <span className="timeline-dot" />
               <div className="timeline-hash">{ed.hash}</div>
-              <div className="timeline-role">{ed.school}</div>
+              {/* <div className="timeline-role">{ed.school}</div> */}
               <div>
                 <span className="timeline-company">{ed.degree}</span>
                 {" · "}

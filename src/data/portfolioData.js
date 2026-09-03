@@ -79,7 +79,7 @@ export const experience = [
   {
     company: "Tech Mahindra COE",
     role: "Software Development Trainee",
-    period: "2025",
+    period: "Jan 2025 —  Apr 2025",
     location: "COE Center, GIET University",
     points: [
       "Completed hands-on training in Java, Spring Boot, React, and Flutter.",
@@ -101,21 +101,51 @@ export const experience = [
   },
 ];
 
+// export const skills = {
+//   languages: [
+//     { name: "JavaScript", level: 92 },
+//     { name: "Python", level: 78 },
+//     { name: "C++", level: 85 },
+//     { name: "HTML / CSS", level: 90 },
+//     { name: "SQL", level: 82 },
+//   ],
+
+//   systems: [
+//     { name: "Node.js & Express.js", level: 92 },
+//     { name: "MongoDB", level: 88 },
+//     { name: "REST APIs & JWT", level: 90 },
+//     { name: "Socket.io & WebSockets", level: 86 },
+//     { name: "LangChain & RAG", level: 84 },
+//   ],
+
+//   tools: [
+//     "React",
+//     "Git",
+//     "GitHub",
+//     "Postman",
+//     "Bootstrap",
+//     "Render",
+//     "Railway",
+//     "Leaflet.js",
+//   ],
+// };
+
+ 
 export const skills = {
   languages: [
-    { name: "JavaScript", level: 92 },
-    { name: "Python", level: 78 },
-    { name: "C++", level: 85 },
-    { name: "HTML / CSS", level: 90 },
-    { name: "SQL", level: 82 },
+    "JavaScript",
+    "Python",
+    "C++",
+    "HTML / CSS",
+    "SQL",
   ],
 
   systems: [
-    { name: "Node.js & Express.js", level: 92 },
-    { name: "MongoDB", level: 88 },
-    { name: "REST APIs & JWT", level: 90 },
-    { name: "Socket.io & WebSockets", level: 86 },
-    { name: "LangChain & RAG", level: 84 },
+    "Node.js & Express.js",
+    "MongoDB",
+    "REST APIs & JWT",
+    "Socket.io & WebSockets",
+    "LangChain & RAG",
   ],
 
   tools: [
@@ -166,6 +196,48 @@ export const projects = [
     link: "https://realtime-chat-client-uzfk.onrender.com/",
     repo: "https://github.com/sunny-raj-sah/RealTime-Chat.git",
   },
+  {
+  name: "Workasana — Task Management Application",
+  hash: "workasana001",
+  description:
+    "Built a full-stack task management application with React, Node.js, Express, and MongoDB, featuring task assignment, project and team management, authentication, dashboards, filtering, and productivity tracking.",
+  tags: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "JWT",
+    "Context API",
+    "REST API",
+    "Bootstrap",
+  ],
+  stars: "Featured",
+  date: "Aug 2026 – Sept 2026",
+  link: "https://workasana-task-management-applicati-phi.vercel.app/login",
+  repo:
+    "https://github.com/sunny-raj-sah/Workasana---Task-Management-Application.git",
+},
+{
+  name: "Anvaya CRM — Lead Management System",
+  hash: "anvaya001",
+  description:
+    "Developed a CRM application for managing leads and customer interactions with structured lead tracking, status management, search and filtering, and a responsive interface for streamlined sales workflows.",
+  tags: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "REST API",
+    "JWT",
+    "JavaScript",
+    "CSS",
+  ],
+  stars: "Featured",
+  date: "June 2026 – July 2026",
+  link: "https://anvaya-crm-lead-management-system.vercel.app/",
+  repo:
+    "https://github.com/sunny-raj-sah/-Anvaya-CRM---Lead-Management-System.git",
+},
   // {
   //   name: "Real-Time Device Tracker",
   //   hash: "gps004",
