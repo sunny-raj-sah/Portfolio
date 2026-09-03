@@ -228,7 +228,7 @@ export const projects = [
     "Express",
     "MongoDB",
     "REST API",
-    "JWT",
+    
     "JavaScript",
     "CSS",
   ],
