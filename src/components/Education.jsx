@@ -18,11 +18,13 @@ export default function Education() {
               {/* <div className="timeline-role">{ed.school}</div> */}
               <div>
                 <span className="timeline-company">{ed.degree}</span>
-                {" · "}
-                <span className="timeline-period">{ed.period}</span>
+                {/* {" · "} */}
+                {/* <span className="timeline-period">{ed.period}</span> */}
               </div>
+              
               <p className="mt-2" style={{ color: "#c3c8d3" }}>
-                {ed.detail}
+                {/* {ed.detail} */}
+                {" · "} {ed.period}
               </p>
             </div>
           ))}
