@@ -193,8 +193,8 @@ export const projects = [
       "Bootstrap",
     ],
     stars: "Featured",
-    link: "https://realtime-chat-client-uzfk.onrender.com/",
-    repo: "https://github.com/sunny-raj-sah/RealTime-Chat.git",
+    link: "https://chat-app-real-time-chat-application-woad.vercel.app/",
+    repo: "https://github.com/sunny-raj-sah/ChatApp-Real-Time-Chat-Application.git",
   },
   {
   name: "Workasana — Task Management Application",
