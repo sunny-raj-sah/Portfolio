@@ -184,11 +184,12 @@ export const projects = [
     name: "Real-Time Chat Application",
     hash: "chat004",
     description:
-      "Built a real-time chat platform with public rooms, private 1:1 messaging, live typing indicators, and dynamic room creation with member invites, using React and Socket.io over WebSockets.",
+      "Built a real-time chat platform with JWT-based authentication, public rooms, private 1:1 messaging, live typing indicators, and dynamic room creation with member invites, using React and Socket.io over WebSockets.",
     tags: [
       "React",
       "Node.js",
       "Express",
+      "JWT",
       "Socket.io",
       "Bootstrap",
     ],
@@ -221,14 +222,14 @@ export const projects = [
   name: "Anvaya CRM — Lead Management System",
   hash: "anvaya001",
   description:
-    "Developed a CRM application for managing leads and customer interactions with structured lead tracking, status management, search and filtering, and a responsive interface for streamlined sales workflows.",
+    "Developed a CRM application for managing leads and customer interactions with JWT-based authentication, structured lead tracking, status management, search and filtering, and a responsive interface for streamlined sales workflows.",
   tags: [
     "React",
     "Node.js",
     "Express",
     "MongoDB",
     "REST API",
-    
+    "JWT",
     "JavaScript",
     "CSS",
   ],
