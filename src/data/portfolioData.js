@@ -402,65 +402,65 @@ export const skills = {
     "SQL",
   ],
 
-  systems: [
-    "Node.js & Express.js",
-    "MongoDB",
-    "REST APIs & JWT",
-    "Socket.io & WebSockets",
-    "LangChain & RAG",
-  ],
+  // systems: [
+  //   "Node.js & Express.js",
+  //   "MongoDB",
+  //   "REST APIs & JWT",
+  //   "Socket.io & WebSockets",
+  //   "LangChain & RAG",
+  // ],
 
-  tools: [
-    "React",
-    "Git",
-    "GitHub",
-    "Postman",
-    "Bootstrap",
-    "Render",
-    "Railway",
-    "Leaflet.js",
-  ],
+  // tools: [
+  //   "React",
+  //   "Git",
+  //   "GitHub",
+  //   "Postman",
+  //   "Bootstrap",
+  //   "Render",
+  //   "Railway",
+  //   "Leaflet.js",
+  // ],
 
   // ---------------------------------------------------------
   // PLANNED ADDITION — requires Skills.jsx component update
   // Uncomment only after updating the component.
   // ---------------------------------------------------------
 
-  // backend: [
-  //   "Node.js",
-  //   "Express.js",
-  //   "REST APIs",
-  //   "JWT Authentication",
-  //   "WebSockets",
-  // ],
+  backend: [
+    "Node.js",
+    "Express.js",
+    "REST APIs",
+    "JWT Authentication",
+    "WebSockets",
+  ],
 
-  // frontend: [
-  //   "React",
-  //   "JavaScript",
-  //   "Bootstrap",
-  //   "HTML",
-  //   "CSS",
-  // ],
+  frontend: [
+    "React",
+    "JavaScript",
+    "Bootstrap",
+    "HTML",
+    "CSS",
+  ],
 
-  // databases: [
-  //   "MongoDB",
-  //   "MySQL",
-  //   "SQL",
-  // ],
+  databases: [
+    "MongoDB",
+    "MySQL",
+    "SQL",
+  ],
 
-  // ai: [
-  //   "LangChain",
-  //   "RAG",
-  //   "Embeddings",
-  //   "LLM APIs",
-  // ],
+  ai: [
+    "LangChain",
+    "RAG",
+    "Embeddings",
+    "LLM APIs",
+  ],
 
-  // devops: [
-  //   "Git",
-  //   "GitHub",
-  //   "Render",
-  //   "Railway",
-  // ],
+  devops: [
+    "Git",
+    "GitHub",
+    "Render",
+    "Railway",
+  ],
 };
 
 export const projects = [
@@ -517,6 +517,7 @@ export const projects = [
     // Planned after Case Study page is implemented:
     // caseStudy: "/case-studies/real-time-chat",
     // blog: "https://hashnode.com/@sunnyraj",
+     caseStudy:"real-time-chat",
   },
 
   {
@@ -542,6 +543,7 @@ export const projects = [
       "https://github.com/sunny-raj-sah/Workasana---Task-Management-Application.git",
 
     // caseStudy: "/case-studies/workasana",
+     caseStudy:"workasana",
   },
 
   {
@@ -567,6 +569,7 @@ export const projects = [
       "https://github.com/sunny-raj-sah/-Anvaya-CRM---Lead-Management-System.git",
 
     // caseStudy: "/case-studies/anvaya-crm",
+    caseStudy:"anvaya-crm",
   },
 
   // ---------------------------------------------------------
@@ -596,6 +599,7 @@ export const projects = [
       "https://github.com/sunny-raj-sah/MERN-Shopping-Site.git",
 
     // caseStudy: "/case-studies/trendora",
+      caseStudy: "trendora-ecommerce",
   },
 
   {
@@ -618,6 +622,7 @@ export const projects = [
 
     // caseStudy: "/case-studies/dumroo-ai-admin",
     // blog: "https://hashnode.com/@sunnyraj",
+   caseStudy: "langchain-ai-admin",
   },
 ];
 

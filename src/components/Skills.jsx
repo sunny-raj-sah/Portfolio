@@ -112,11 +112,19 @@ export default function Skills() {
         <Row className="g-5">
           <Col md={6}>
             <SkillGroup title="Languages" items={skills.languages} />
-            <SkillGroup title="Systems & Infra" items={skills.systems} />
+            {/* <SkillGroup title="Systems & Infra" items={skills.systems} /> */}
+                        <SkillGroup title="Backend" items={skills.backend} />
+                         <SkillGroup title="Frontend" items={skills.frontend} />
+         
+                 
           </Col>
 
           <Col md={6}>
-            <SkillGroup title="Tools" items={skills.tools} />
+            {/* <SkillGroup title="Tools" items={skills.tools} /> */}
+                   <SkillGroup title="AI" items={skills.ai} />
+                    <SkillGroup title="Devops" items={skills.devops} />
+                 
+                                  <SkillGroup title="Database" items={skills.databases} />
           </Col>
         </Row>
       </Container>
