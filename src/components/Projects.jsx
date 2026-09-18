@@ -61,6 +61,16 @@ export default function Projects() {
                     >
                       <FiExternalLink style={{ marginBottom: 2 }} /> Live
                     </Button>
+                    {p.caseStudy && (
+                      <Button
+                        href={`/case-study/${p.caseStudy}`}
+                        size="sm"
+                        variant="outline-light"
+                        className="btn-outline-mint"
+                      >
+                        Case Study
+                      </Button>
+                    )}
                   </div>
                 </Card.Body>
               </Card>
