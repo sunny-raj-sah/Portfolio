@@ -770,3 +770,18 @@ a:hover {
     min-width: 600px;
   }
 }
+
+/* case- study btn to project section useeffect */
+  .project-return {
+  animation: projectSectionFromLeft 0.9s ease-out;
+}
+
+@keyframes projectSectionFromLeft {
+  from {
+    transform: translateX(-100px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { FiStar, FiGithub, FiExternalLink } from "react-icons/fi";
 import SectionHead from "./SectionHead";
@@ -6,8 +7,50 @@ import { useReveal } from "../useReveal";
 
 export default function Projects() {
   const ref = useReveal();
+ 
 
-  return (
+useEffect(() => {
+  const hash = window.location.hash;
+
+  if (!hash) return;
+
+  const element = document.querySelector(hash);
+
+  if (!element) return;
+
+  setTimeout(() => {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }, 100);
+}, []);
+
+ 
+//   const hash = window.location.hash;
+
+//   if (!hash) return;
+
+//   const element = document.querySelector(hash);
+
+//   if (!element) return;
+
+//   setTimeout(() => {
+//     element.scrollIntoView({
+//       behavior: "smooth",
+//       block: "center",
+//     });
+
+//     // Add return animation
+//     element.classList.add("project-return-animation");
+
+//     // Remove animation class after animation completes
+//     setTimeout(() => {
+//       element.classList.remove("project-return-animation");
+//     }, 800);
+//   }, 100);
+// }, []);  
+return (
     <section className="section section-alt" id="projects">
       <Container className="container-narrow reveal" ref={ref}>
         <SectionHead
@@ -17,7 +60,7 @@ export default function Projects() {
         />
         <Row className="g-4">
           {projects.map((p) => (
-            <Col md={6} key={p.hash}>
+            <Col md={6} key={p.hash}  id={p.sectionId}>
               <Card className="project-card">
                 <Card.Body className="d-flex flex-column h-100">
                   <div className="d-flex justify-content-between align-items-start mb-2">

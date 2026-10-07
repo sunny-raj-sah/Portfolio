@@ -1,31 +1,4 @@
-// import NavBar from "./components/NavBar";
-// import Hero from "./components/Hero";
-// import About from "./components/About";
-// import Experience from "./components/Experience";
-// import Skills from "./components/Skills";
-// import Projects from "./components/Projects";
-// import Education from "./components/Education";
-// import Contact from "./components/Contact";
-// import Footer from "./components/Footer";
-
-// export default function App() {
-//   return (
-//     <>
-//       <NavBar />
-//       <Hero />
-//       <About />
-//       <Experience />
-//       <Skills />
-//       <Projects />
-//       <Education />
-//       <Contact />
-//       <Footer />
-//     </>
-//   );
-// }
-// -------------------------------------------------------------------------------------------
-// ----------------------------------------------------------------
-
+ 
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
@@ -60,39 +33,45 @@ function Portfolio() {
   //     return () => clearTimeout(timer);
   //   }
   // }, [location]);
+ 
+
  useEffect(() => {
-  if (location.hash !== "#projects") return;
+  const projectId = location.state?.returnToProject;
 
-  const timer = setTimeout(() => {
-    const projectsSection = document.getElementById("projects");
+  if (!projectId) return;
 
-    if (!projectsSection) return;
+  let attempts = 0;
+  const maxAttempts = 20;
 
-    // First move to the projects section instantly
-    projectsSection.scrollIntoView({
-      behavior: "instant",
-      block: "start",
-    });
+  const findAndScroll = () => {
+    const element = document.getElementById(projectId);
 
-    // Add animation class
-    projectsSection.classList.remove("projects-return-animation");
+    if (element) {
+      element.scrollIntoView({
+        behavior: "instant",
+        block: "center",
+      });
 
-    // Force browser to restart animation
-    void projectsSection.offsetWidth;
+      // Clear navigation state after returning
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+      );
 
-    projectsSection.classList.add("projects-return-animation");
+      return;
+    }
 
-    // Remove class after animation finishes
-    const removeAnimation = setTimeout(() => {
-      projectsSection.classList.remove("projects-return-animation");
-    }, 900);
+    attempts++;
 
-    return () => clearTimeout(removeAnimation);
-  }, 150);
+    if (attempts < maxAttempts) {
+      requestAnimationFrame(findAndScroll);
+    }
+  };
 
-  return () => clearTimeout(timer);
-}, [location]);
+  requestAnimationFrame(findAndScroll);
 
+}, [location.state]);
 
   return (
     <>

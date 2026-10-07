@@ -467,6 +467,7 @@ export const projects = [
   {
     name: "PDF Grounded AI Document Q&A RAG System",
     hash: "rag001",
+    sectionId: "project-pdf-rag",
     description:
       "Built a Retrieval-Augmented Generation (RAG) system for grounded question answering over a 637-page PDF, using document chunking, embeddings, semantic retrieval, and LLM-based response generation.",
     tags: [
@@ -497,7 +498,8 @@ export const projects = [
 
   {
     name: "Real-Time Chat Application",
-    hash: "chat004",
+    hash: "chat002",
+     sectionId:"project-real-time-chat",
     description:
       "Built a real-time chat platform with JWT authentication, public rooms, private 1:1 messaging, typing indicators, presence, message delivery states, and dynamic room creation using Socket.io over WebSockets.",
     tags: [
@@ -522,7 +524,8 @@ export const projects = [
 
   {
     name: "Workasana — Task Management Application",
-    hash: "workasana001",
+    hash: "workasana003",
+    sectionId: "project-workasana",
     description:
       "Built a full-stack task management system with React, Node.js, Express, and MongoDB, implementing JWT authentication, task assignment, project and team management, dashboards, filtering, and productivity workflows.",
     tags: [
@@ -545,10 +548,35 @@ export const projects = [
     // caseStudy: "/case-studies/workasana",
      caseStudy:"workasana",
   },
+ {
+name: "KaviosPix - Secure Photo Management Platform",
+hash: "kaviospix004",
+sectionId: "project-kaviospix",
+description:
+"Built a full-stack photo management platform with Google OAuth, JWT authentication, album-level authorization, protected image serving, image uploads, album sharing, tags, favorites, and comments using React, Node.js, Express.js, and MongoDB.",
+tags: [
+"React",
+"Node.js",
+"Express.js",
+"MongoDB",
+"JWT",
+"Google OAuth",
+"Multer",
+"Bootstrap",
+"Context API",
+],
+stars: "Featured",
+link:
+"https://frontend-five-puce-11.vercel.app/",
+repo:
+"https://github.com/sunny-raj-sah/KaviosPix.git",
 
+caseStudy: "kaviospix",
+},
   {
     name: "Anvaya CRM — Lead Management System",
-    hash: "anvaya001",
+    hash: "anvaya005",
+    sectionId: "project-anvaya-crm",
     description:
       "Developed a CRM system for structured lead management and customer interactions with JWT authentication, lead lifecycle tracking, status management, search and filtering, sales-agent workflows, and responsive dashboards.",
     tags: [
@@ -580,7 +608,8 @@ export const projects = [
 
   {
     name: "Trendora - Full Stack E-Commerce Platform",
-    hash: "ecom001",
+    hash: "ecom006",
+     sectionId: "project-trendora-ecommerce",
     description:
       "Built a full-stack e-commerce application using the MERN stack with JWT authentication, product search, category filtering, shopping cart, wishlist management, and responsive user interfaces.",
     tags: [
@@ -604,7 +633,8 @@ export const projects = [
 
   {
     name: "LangChain-AI Admin Query Assistant",
-    hash: "ai002",
+    hash: "ai007",
+     sectionId: "project-langchain-ai-admin",
     description:
       "Developed an AI-powered admin dashboard that enables natural-language queries over educational datasets using LangChain, role-based access control (RBAC), and dynamic analytics.",
     tags: [
