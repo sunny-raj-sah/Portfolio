@@ -339,20 +339,20 @@ export const education = [
     detail: "CGPA: 7.32 / 10",
     hash: "giet732",
   },
-  {
-    school: "Bihar Board of Open Schooling & Examination",
-    degree: "Senior Secondary (PCM)",
-    period: "(2019 — 2021)",
-    detail: "Score: 70%",
-    hash: "bbose70",
-  },
-  {
-    school: "Central Board of Secondary Education (CBSE)",
-    degree: "Secondary Education (CBSE)",
-    period: "(2016)",
-    detail: "CGPA: 8.2 / 10",
-    hash: "cbse82",
-  },
+  // {
+  //   school: "Bihar Board of Open Schooling & Examination",
+  //   degree: "Senior Secondary (PCM)",
+  //   period: "(2019 — 2021)",
+  //   detail: "Score: 70%",
+  //   hash: "bbose70",
+  // },
+  // {
+  //   school: "Central Board of Secondary Education (CBSE)",
+  //   degree: "Secondary Education (CBSE)",
+  //   period: "(2016)",
+  //   detail: "CGPA: 8.2 / 10",
+  //   hash: "cbse82",
+  // },
 ];
 
 export const experience = [
