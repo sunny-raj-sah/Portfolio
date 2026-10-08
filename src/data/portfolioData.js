@@ -465,7 +465,7 @@ export const skills = {
 
 export const projects = [
   {
-    name: "PDF Grounded AI Document Q&A RAG System",
+    name: "AI Document Q&A System — RAG-Based LLM Application",
     hash: "rag001",
     sectionId: "project-pdf-rag",
     description:
@@ -632,7 +632,7 @@ caseStudy: "kaviospix",
   },
 
   {
-    name: "LangChain-AI Admin Query Assistant",
+    name: "AI Admin Query Assistant",
     hash: "ai007",
      sectionId: "project-langchain-ai-admin",
     description:

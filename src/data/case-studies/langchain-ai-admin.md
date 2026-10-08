@@ -1,4 +1,4 @@
-# LangChain AI Admin Query Assistant
+# AI Admin Query Assistant
 
 ## Project Overview
 

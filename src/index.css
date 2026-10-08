@@ -525,7 +525,7 @@ a:hover {
 .case-study-title {
   margin: 0 0 30px;
 
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.0rem, 5vw, 4rem);
   line-height: 1.1;
   font-weight: 700;
 
@@ -538,7 +538,7 @@ a:hover {
   margin-top: 65px;
   margin-bottom: 20px;
 
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.6rem, 3vw, 2.0rem);
   line-height: 1.25;
 
   color: var(--mint, #72e6c1);
@@ -553,7 +553,7 @@ a:hover {
   margin-top: 35px;
   margin-bottom: 14px;
 
-  font-size: 1.25rem;
+  font-size: 1.20rem;
   color: #ffffff;
 }
 
@@ -748,12 +748,12 @@ a:hover {
   }
 
   .case-study-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .case-study-heading {
     margin-top: 45px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .case-study-paragraph {

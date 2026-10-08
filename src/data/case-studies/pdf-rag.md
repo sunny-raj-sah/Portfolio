@@ -1,5 +1,4 @@
- # PDF Grounded AI Document Q&A RAG System
-
+ #  AI Document Q&A System — RAG-Based LLM Application
 ### Building a grounded question-answering system over a 637-page technical document
 
 **Role:** Full Stack / AI Engineer
@@ -705,6 +704,3 @@ https://github.com/sunny-raj-sah/AI-powered-RAG-system-for-grounded-PDF-question
 ## Technologies
 
 `React` `Node.js` `Express.js` `LangChain` `RAG` `Hugging Face` `Embeddings` `Groq` `LLM` `JavaScript`
-
-````
- 
