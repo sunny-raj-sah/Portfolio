@@ -314,7 +314,7 @@ export const profile = {
   github: "https://github.com/sunny-raj-sah",
   linkedin: "https://linkedin.com/in/sunny-raj-885588313",
   resumeUrl:
-    "https://drive.google.com/file/d/1nvMb1oACJ_4nvnc09d2xJlXoB4FLVL70/view?usp=sharing",
+    "https://drive.google.com/file/d/1fplrNvU9jTBhjhhH0NE-lre_SyRnjXCv/view?usp=sharing",
   // resumeUrl: "/Sunny_Raj__Resume.pdf",
   avatarInitials: "SR",
   commitHash: "sr2026a",
