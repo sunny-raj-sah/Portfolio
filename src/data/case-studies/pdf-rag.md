@@ -1,4 +1,5 @@
- #  AI Document Q&A System — RAG-Based LLM Application
+ #  AI Document Q&A System  
+ 
 ### Building a grounded question-answering system over a 637-page technical document
 
 **Role:** Full Stack / AI Engineer

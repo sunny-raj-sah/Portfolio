@@ -305,7 +305,7 @@ export const profile = {
   roles: [
     "Full Stack Engineer",
     "Backend Engineer",
-    "AI Engineer (Entry Level)",
+    "AI Engineer",
   ],
   tagline:
   "I build full-stack web applications, AI-powered systems, and real-time solutions using React, Node.js, MongoDB, WebSockets, Socket.io, and LangChain.",
@@ -314,7 +314,8 @@ export const profile = {
   github: "https://github.com/sunny-raj-sah",
   linkedin: "https://linkedin.com/in/sunny-raj-885588313",
   resumeUrl:
-    "https://drive.google.com/file/d/1fplrNvU9jTBhjhhH0NE-lre_SyRnjXCv/view?usp=sharing",
+  "https://drive.google.com/file/d/1nvMb1oACJ_4nvnc09d2xJlXoB4FLVL70/view?usp=sharing",
+    // "https://drive.google.com/file/d/1fplrNvU9jTBhjhhH0NE-lre_SyRnjXCv/view?usp=sharing",
   // resumeUrl: "/Sunny_Raj__Resume.pdf",
   avatarInitials: "SR",
   commitHash: "sr2026a",
@@ -465,7 +466,7 @@ export const skills = {
 
 export const projects = [
   {
-    name: "AI Document Q&A System — RAG-Based LLM Application",
+    name: "AI Document Q&A System ",
     hash: "rag001",
     sectionId: "project-pdf-rag",
     description:
@@ -549,7 +550,7 @@ export const projects = [
      caseStudy:"workasana",
   },
  {
-name: "KaviosPix - Secure Photo Management Platform",
+name: "KaviosPix",
 hash: "kaviospix004",
 sectionId: "project-kaviospix",
 description:
@@ -574,7 +575,7 @@ repo:
 caseStudy: "kaviospix",
 },
   {
-    name: "Anvaya CRM — Lead Management System",
+    name: "Anvaya CRM — Sales & Lead Management System",
     hash: "anvaya005",
     sectionId: "project-anvaya-crm",
     description:
@@ -607,7 +608,7 @@ caseStudy: "kaviospix",
   // ---------------------------------------------------------
 
   {
-    name: "Trendora - Full Stack E-Commerce Platform",
+    name: "Trendora - MERN Shopping Site",
     hash: "ecom006",
      sectionId: "project-trendora-ecommerce",
     description:

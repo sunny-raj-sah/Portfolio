@@ -1,4 +1,4 @@
-# Anvaya CRM — Lead Management System
+# Anvaya CRM — Sales & Lead Management System
 
 ## 1. Project Overview
 

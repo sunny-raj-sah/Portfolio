@@ -1,4 +1,4 @@
-# KaviosPix — Secure Photo Management Platform
+# KaviosPix 
 
 > A full-stack photo management platform focused on authentication, authorization, protected resources, image management, and album sharing.
 

@@ -1,4 +1,4 @@
-# Trendora — Full Stack E-Commerce Platform
+# Trendora — MERN Shopping Site
 
 ## Project Overview
 
