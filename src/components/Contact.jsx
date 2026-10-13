@@ -115,7 +115,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={handleChange}
                         className="form-control-dark"
-                        placeholder="Jane Doe"
+                        placeholder="Sunny raj"
                       />
                       <Form.Control.Feedback type="invalid">
                         Please enter your name.
@@ -140,7 +140,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={handleChange}
                         className="form-control-dark"
-                        placeholder="jane@example.com"
+                        placeholder="sunnyraj01000.com"
                       />
                       <Form.Control.Feedback type="invalid">
                         Please enter a valid email.

@@ -7,15 +7,36 @@ export default function Footer() {
     <footer className="footer">
       <Container>
         <div className="mb-3">
-          <a href={socials.github} className="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <a
+            href={socials.github}
+            className="social-icon"
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FiGithub />
           </a>
-          <a href={socials.linkedin} className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <a
+            href={socials.linkedin}
+            className="social-icon"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FiLinkedin />
           </a>
           {/* <a href={socials.twitter} className="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
             <FiTwitter />
           </a> */}
+          <a
+            href={socials.hashnode}
+            className="social-icon"
+            aria-label="Hashnode Blog"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiHashnode />
+          </a>
           <a href={socials.email} className="social-icon" aria-label="Email">
             <FiMail />
           </a>
