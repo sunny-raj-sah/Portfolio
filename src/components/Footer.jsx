@@ -28,7 +28,7 @@ export default function Footer() {
           {/* <a href={socials.twitter} className="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
             <FiTwitter />
           </a> */}
-          <a
+          {/* <a
             href={socials.hashnode}
             className="social-icon"
             aria-label="Hashnode Blog"
@@ -36,7 +36,7 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <SiHashnode />
-          </a>
+          </a> */}
           <a href={socials.email} className="social-icon" aria-label="Email">
             <FiMail />
           </a>
