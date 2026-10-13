@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
+import { SiHashnode } from "react-icons/si";
 import { socials, profile } from "../data/portfolioData";
 
 export default function Footer() {
@@ -28,15 +29,15 @@ export default function Footer() {
           {/* <a href={socials.twitter} className="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
             <FiTwitter />
           </a> */}
-          {/* <a
+          <a
             href={socials.hashnode}
             className="social-icon"
             aria-label="Hashnode Blog"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SiHashnode />
-          </a> */}
+             <SiHashnode />
+          </a>
           <a href={socials.email} className="social-icon" aria-label="Email">
             <FiMail />
           </a>

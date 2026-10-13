@@ -662,5 +662,5 @@ export const socials = {
   linkedin: "https://linkedin.com/in/sunny-raj-885588313",
   twitter: "#",
   email: "mailto:sunnyraj01000@gmail.com",
-  // hashnode:"https://hashnode.com/@sunnyraj",
+  hashnode:"https://hashnode.com/@sunnyraj",
 };
