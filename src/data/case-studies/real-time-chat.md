@@ -1,4 +1,4 @@
-# Real-Time Chat Application — Case Study
+#  Chat App — Case Study
 
 ## 1. Project Overview
 
