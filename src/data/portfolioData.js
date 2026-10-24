@@ -498,7 +498,7 @@ export const projects = [
   },
 
   {
-    name: "Real-Time Chat Application",
+    name: "Chat App",
     hash: "chat002",
      sectionId:"project-real-time-chat",
     description:
