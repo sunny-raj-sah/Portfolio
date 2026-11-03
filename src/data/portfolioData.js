@@ -496,10 +496,34 @@ export const projects = [
     // caseStudy: "src\data\case-studies\pdf-rag.md",
     // blog: "https://hashnode.com/@sunnyraj",
   },
+ {
+    name: "GradeLens AI",
+    hash: "ai002",
+     sectionId: "project-langchain-ai-admin",
+    description:
+      "Developed an AI-powered admin dashboard that enables natural-language queries over educational datasets using LLM, role-based access control (RBAC), and dynamic analytics.",
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Groq",
+      "RBAC",
+    ],
+    stars: "Featured",
+    link:
+      "https://grade-lens-ai-six.vercel.app/",
+    repo:
+      "https://github.com/sunny-raj-sah/GradeLens-AI.git",
 
+    // caseStudy: "/case-studies/dumroo-ai-admin",
+    // blog: "https://hashnode.com/@sunnyraj",
+   caseStudy: "langchain-ai-admin",
+  },
   {
     name: "Chat App",
-    hash: "chat002",
+    hash: "chat003",
      sectionId:"project-real-time-chat",
     description:
       "Built a real-time chat platform with JWT authentication, public rooms, private 1:1 messaging, typing indicators, presence, message delivery states, and dynamic room creation using Socket.io over WebSockets.",
@@ -525,7 +549,7 @@ export const projects = [
 
   {
     name: "Workasana",
-    hash: "workasana003",
+    hash: "workasana004",
     sectionId: "project-workasana",
     description:
       "Built a full-stack task management system with React, Node.js, Express, and MongoDB, implementing JWT authentication, task assignment, project and team management, dashboards, filtering, and productivity workflows.",
@@ -551,7 +575,7 @@ export const projects = [
   },
  {
 name: "KaviosPix",
-hash: "kaviospix004",
+hash: "kaviospix005",
 sectionId: "project-kaviospix",
 description:
 "Built a full-stack photo management platform with Google OAuth, JWT authentication, album-level authorization, protected image serving, image uploads, album sharing, tags, favorites, and comments using React, Node.js, Express.js, and MongoDB.",
@@ -576,7 +600,7 @@ caseStudy: "kaviospix",
 },
   {
     name: "Anvaya CRM",
-    hash: "anvaya005",
+    hash: "anvaya006",
     sectionId: "project-anvaya-crm",
     description:
       "Developed a CRM system for structured lead management and customer interactions with JWT authentication, lead lifecycle tracking, status management, search and filtering, sales-agent workflows, and responsive dashboards.",
@@ -609,7 +633,7 @@ caseStudy: "kaviospix",
 
   {
     name: "Trendora Fashion",
-    hash: "ecom006",
+    hash: "ecom007",
      sectionId: "project-trendora-ecommerce",
     description:
       "Built a full-stack e-commerce application using the MERN stack with JWT authentication, product search, category filtering, shopping cart, wishlist management, and responsive user interfaces.",
@@ -632,31 +656,7 @@ caseStudy: "kaviospix",
       caseStudy: "trendora-ecommerce",
   },
 
-  {
-    name: "GradeLens AI",
-    hash: "ai007",
-     sectionId: "project-langchain-ai-admin",
-    description:
-      "Developed an AI-powered admin dashboard that enables natural-language queries over educational datasets using LLM, role-based access control (RBAC), and dynamic analytics.",
-    tags: [
-      "React.js",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Prisma",
-      "Groq",
-      "RBAC",
-    ],
-    stars: "Featured",
-    link:
-      "https://grade-lens-ai-six.vercel.app/",
-    repo:
-      "https://github.com/sunny-raj-sah/GradeLens-AI.git",
-
-    // caseStudy: "/case-studies/dumroo-ai-admin",
-    // blog: "https://hashnode.com/@sunnyraj",
-   caseStudy: "langchain-ai-admin",
-  },
+ 
 ];
 
 export const socials = {
