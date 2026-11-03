@@ -1,4 +1,4 @@
-# Workasana — Task Management Application
+# Workasana 
 
 ## 1. Project Overview
 

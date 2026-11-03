@@ -1,968 +1,811 @@
-# AI Admin Query Assistant
+ # GradeLens AI
+## AI-Powered Education Management & Learning Analytics Platform
 
-## Project Overview
+**A full-stack education management platform combining academic workflows, role-based access control, performance analytics, and AI-assisted educational insights.**
 
-The **LangChain AI Admin Query Assistant** is an AI-powered administrative dashboard that allows authorized administrators to query student and academic data using natural language.
-
-Instead of requiring administrators to write database queries or manually inspect datasets, the application provides a Streamlit interface where an administrator can ask questions such as:
-
-```text
-Which students haven't submitted their homework?
-```
-
-or:
-
-```text
-Show me average quiz scores by class
-```
-
-The application converts the natural-language request into an analysis over a pandas DataFrame through a LangChain-powered agent.
-
-A key part of the system is **access control before AI processing**. Administrators are assigned specific grades, classes, and regions, and the application filters the dataset according to those permissions before passing the data to the AI query engine.
+**Project Type:** Full-Stack Application | AI Engineering | EdTech  
+**Role:** Full-Stack Developer & AI Engineer  
+**Architecture:** Client–Server Architecture  
+**Development Focus:** TypeScript, React, Node.js, PostgreSQL, Prisma ORM, and LLM Integration
 
 ---
 
-# Problem
+## 1. Executive Summary
 
-Educational administrative data can contain a large amount of information about:
+Educational institutions manage large amounts of academic information across students, classrooms, teachers, homework, submissions, and assessments.
 
-* Students
-* Grades
-* Classes
-* Regions
-* Homework submission
-* Quiz scores
-* Quiz dates
-* Quiz names
+When these operations are handled through disconnected systems, administrators and teachers often spend significant time managing records, tracking academic progress, and identifying students who need additional support.
 
-Traditional data analysis requires administrators to understand the underlying data structure or manually filter records.
+**GradeLens AI** addresses this challenge through an integrated education management platform that centralizes academic workflows and provides AI-assisted access to educational information.
 
-The goal of this project was to create a simpler interface where an administrator could ask questions in natural language while ensuring that the AI only operates on data within the administrator's authorized scope.
+The platform supports three primary user roles:
 
----
+- **Admin:** Manages teachers, classrooms, student-related operations, and institutional information.
+- **Teacher:** Works with assigned classrooms, manages academic activities, and monitors student performance.
+- **Student:** Accesses classroom-related learning activities and academic information.
 
-# Goals
+An integrated AI assistant allows users to interact with educational information through natural-language questions, with access determined by their application role and classroom context.
 
-The project was designed around five main goals:
+Rather than building a standalone chatbot, the objective was to integrate AI into an actual education management workflow.
 
-1. Provide natural-language querying over structured student data.
-2. Restrict data access based on administrator permissions.
-3. Build a simple interactive dashboard using Streamlit.
-4. Keep data loading, access control, and AI querying modular.
-5. Add authentication so only authenticated users can access the dashboard.
+## 2. The Problem
 
----
+Educational management involves several interconnected responsibilities.
 
-# Core Features
+### Fragmented academic operations
 
-## 1. Natural-Language Data Querying
+Student records, classroom information, homework, submissions, and quiz results need to be managed consistently.
 
-The primary feature is the ability to ask questions about student data using normal language.
+### Limited visibility into student performance
 
-Examples include:
+Teachers and administrators need a convenient way to understand academic progress and identify students who may require additional attention.
 
-```text
-Which students haven't submitted their homework?
-```
+### Repetitive information retrieval
 
-```text
-Show me average quiz scores by class
-```
+Finding specific information often requires navigating multiple screens, filtering records, and manually interpreting data.
 
-```text
-Which students scored above 80?
-```
+### Access-control requirements
 
-```text
-List quizzes scheduled after November 10
-```
-
-The application passes the filtered DataFrame to a LangChain pandas DataFrame agent.
-
-The high-level flow is:
-
-```text
-Natural Language Question
-          ↓
-      QueryEngine
-          ↓
-LangChain DataFrame Agent
-          ↓
-      LLM Reasoning
-          ↓
-   DataFrame Analysis
-          ↓
-      Text Response
-```
-
----
-
-# 2. Access Control Before AI Processing
-
-Access control is one of the most important architectural decisions in the application.
-
-Each administrator has an access profile containing:
-
-```text
-allowed_grades
-allowed_classes
-allowed_regions
-```
+Different users should have different levels of access.
 
 For example:
+- An administrator needs an institution-wide view.
+- A teacher should work within their assigned academic context.
+- A student should not be able to access another student's private information.
 
-```json
-{
-  "admin_id": "A001",
-  "admin_name": "Mrs. Gupta",
-  "allowed_grades": [8],
-  "allowed_classes": ["8A", "8B"],
-  "allowed_regions": ["North"]
-}
-```
+### The opportunity
 
-Another administrator can have a different scope:
+Build a centralized platform that combines academic management, structured data access, analytics, and contextual AI assistance.
 
-```json
-{
-  "admin_id": "A002",
-  "admin_name": "Mr. Verma",
-  "allowed_grades": [9],
-  "allowed_classes": ["9A"],
-  "allowed_regions": ["South"]
-}
-```
+## 3. Project Objectives
 
-The `AccessControl` class applies these restrictions to the complete student DataFrame.
+The project was designed around the following objectives:
 
-```text
-Complete Student Dataset
-          ↓
-     AccessControl
-          ↓
- ┌────────┼─────────┐
- │        │         │
-Grade   Class     Region
- │        │         │
- └────────┼─────────┘
-          ↓
- Authorized Dataset
-          ↓
-      QueryEngine
-```
+1. Build a centralized academic management platform.
+2. Implement authentication and role-based authorization.
+3. Support classroom and student management workflows.
+4. Provide homework and submission management.
+5. Organize quiz results and academic performance information.
+6. Provide analytics to support student performance evaluation.
+7. Integrate an AI assistant into the existing application.
+8. Ensure AI responses respect user roles and relevant classroom access.
+9. Build a maintainable backend using TypeScript and modular architecture.
+10. Deploy the application as an accessible web platform.
 
-This is important because the AI query engine receives the **filtered DataFrame**, rather than the complete dataset.
+## 4. Solution Overview
 
----
+GradeLens AI brings academic operations and AI-assisted insights into one application.
 
-# 3. Defense-in-Depth Data Flow
+### Core application modules
 
-The application follows this security-oriented sequence:
+| Module | Purpose |
+|---|---|
+| Authentication | Secure user login and registration |
+| Role Management | Different experiences for Admin, Teacher, and Student |
+| Classroom Management | Organize and manage academic classrooms |
+| Student Management | Maintain student records and classroom relationships |
+| Teacher Management | Administrative teacher management |
+| Homework | Create and manage academic assignments |
+| Submissions | Track student homework submissions |
+| Quiz Results | Organize assessment performance |
+| Analytics | Understand student performance and support requirements |
+| AI Assistant | Ask contextual questions about educational information |
 
-```text
-User Authentication
-        ↓
-Authenticated Session
-        ↓
-Admin Access Profile
-        ↓
-AccessControl
-        ↓
-Filtered DataFrame
-        ↓
-LangChain Query Engine
-        ↓
-Natural Language Analysis
-        ↓
-Response
-```
+The platform is designed around the relationship between users, classrooms, academic activities, and student performance.
 
-The access-control layer therefore sits before the AI analysis layer.
+## 5. User Roles and Access Architecture
 
-This design reduces the amount of data exposed to the AI agent and establishes a clear separation between authorization and query processing.
+One of the important engineering requirements was ensuring that users receive information appropriate to their role.
 
----
+### Admin
 
-# 4. Streamlit Dashboard
+Administrators have broader institutional responsibilities.
 
-The application is built using Streamlit.
+Their workflows include:
+- Managing teachers.
+- Accessing classroom information.
+- Managing student-related information.
+- Reviewing academic operations.
+- Accessing institution-wide information through the AI assistant.
 
-The dashboard provides:
+### Teacher
 
-* Admin profile selection
-* Access-scope information
-* Accessible student count
-* Example queries
-* Natural-language query input
-* AI-generated responses
-* Filtered-data preview
-* Query history
-* Clear-history functionality
-* Logout
+Teachers work within their assigned academic context.
 
-The sidebar displays the administrator's current access scope:
+Their workflows include:
+- Accessing relevant classrooms.
+- Working with student information.
+- Managing homework and submissions.
+- Reviewing quiz results.
+- Understanding student performance.
+- Asking classroom-related questions through AI.
 
-```text
-Grades
-Classes
-Regions
-```
+### Student
 
-It also shows the number of records available within that scope.
+Students interact with the learning side of the platform.
 
----
+Their workflows include:
+- Accessing relevant academic information.
+- Viewing homework and learning activities.
+- Accessing their academic information.
+- Using AI assistance for general educational questions and assigned-classroom context where applicable.
 
-# 5. Example Queries
+### Authorization principle
 
-The interface provides predefined examples to make the AI functionality easier to explore.
+Authentication and authorization are separate responsibilities.
 
-### Homework
+Authentication establishes who the user is.
 
-```text
-Which students haven't submitted their homework?
-```
+Authorization establishes what the authenticated user is allowed to access.
 
-### Performance
+GradeLens AI uses role-aware backend logic to enforce these distinctions.
 
-```text
-Show me average quiz scores by class
-```
+## 6. Core Features
 
-### Upcoming quizzes
+### 6.1 Authentication and Role-Based Access
 
-```text
-List quizzes scheduled after November 10
-```
+The application provides authentication for different categories of users.
 
-Users can also enter their own natural-language questions.
+After authentication, the application uses the user's role to determine the appropriate application experience and available operations.
 
----
+**Engineering concepts:**
+- JWT-based authentication.
+- Protected backend routes.
+- Middleware-based authorization.
+- Role-based access control.
+- Authenticated API communication.
 
-# 6. Query History
+### 6.2 Classroom Management
 
-Each submitted query and its generated response are stored in Streamlit session state.
+Classrooms are a central part of the application data model.
 
-The application maintains:
+They provide the academic context connecting students, teachers, and classroom activities.
 
-```python
-st.session_state.query_history
-```
+The classroom module supports:
+- Retrieving classroom information.
+- Organizing classroom records.
+- Connecting students with their academic environment.
+- Providing classroom context for AI-assisted queries.
 
-Each history item contains:
+### 6.3 Student Management
 
-```text
-query
-response
-```
+Student information is organized within the educational structure.
 
-The interface displays previous queries using expandable sections.
+The platform supports student-related operations and relationships with classrooms.
 
-This allows an administrator to review previous analysis without immediately repeating the same request.
+This allows other modules to use consistent academic context instead of maintaining disconnected student information.
 
----
+### 6.4 Teacher Management
 
-# 7. Accessible Data Preview
+The administrative interface includes teacher management functionality.
 
-After access control is applied, the application displays the accessible record count.
+Administrators can manage teacher records and use teacher assignments as part of the academic organization.
 
-The dashboard can also expose the filtered DataFrame through an expandable section.
+### 6.5 Homework and Submission Management
 
-This provides a useful transparency layer:
+Homework management connects academic tasks with student participation.
 
-```text
-Admin
-  ↓
-Access Scope
-  ↓
-Number of Accessible Records
-  ↓
-Filtered Data Preview
-  ↓
-AI Query
-```
+The platform separates homework information from student submission information, allowing academic activities and their completion status to be managed independently.
 
-The administrator can therefore understand the data scope being analyzed.
+This creates a foundation for monitoring submission activity and identifying incomplete work.
 
----
+### 6.6 Quiz Results and Performance Tracking
 
-# Architecture
+Quiz results provide structured information about student assessment performance.
 
-The project follows a modular Python architecture.
+These records form part of the analytics and AI information layer.
 
-```text
-                         ┌─────────────────────┐
-                         │     Streamlit UI     │
-                         │       app.py         │
-                         └──────────┬──────────┘
-                                    │
-                     ┌──────────────┼──────────────┐
-                     │              │              │
-                     ▼              ▼              ▼
-               DataLoader     AccessControl    Auth Layer
-                     │              │              │
-                     ▼              ▼              ▼
-              Student/Admin    Filtered Data   Authenticated
-                  Data             │             Session
-                                   │
-                                   ▼
-                            ┌───────────────┐
-                            │  QueryEngine  │
-                            └───────┬───────┘
-                                    │
-                                    ▼
-                            LangChain Agent
-                                    │
-                                    ▼
-                               ChatGroq
-                                    │
-                                    ▼
-                              AI Response
-```
+The purpose is to make academic performance information easier to retrieve and interpret.
 
----
+### 6.7 Student Performance Analytics
 
-# Project Structure
+The analytics module helps interpret academic performance and identify students who may need additional support.
 
-```text
-LangChain-AI-Admin-Query-Assistant/
-│
-├── data/
-│   ├── students_data.json
-│   └── admins_data.json
-│
-├── src/
-│   ├── app.py
-│   ├── auth.py
-│   ├── access_control.py
-│   ├── data_loader.py
-│   ├── query_engine.py
-│   │
-│   └── components/
-│       └── auth_ui.py
-│
-├── requirements.txt
-├── render.yaml
-└── README.md
-```
+The project includes a support-classification threshold:
 
-The application separates the major responsibilities instead of placing all logic inside the Streamlit entry point.
+`SUPPORT_THRESHOLD = 60`
+
+This threshold is used in the relevant analytics classification logic.
+
+It provides a configurable starting point for distinguishing students who may require additional academic support.
+
+It should be understood as an application rule, not a validated educational diagnosis.
+
+### 6.8 AI-Powered Educational Assistant
+
+The AI assistant is a central feature of GradeLens AI.
+
+Instead of requiring users to manually navigate different academic modules, the assistant provides a natural-language interface for asking questions.
+
+Examples of potential questions include:
+
+**Administrator**
+- Show me the available classrooms.
+- Summarize academic activity across classrooms.
+- Which students may need additional academic support?
+
+**Teacher**
+- Summarize the performance of students in my selected classroom.
+- Which students have incomplete homework submissions?
+- Explain the quiz performance of my classroom.
+
+**Student**
+- Help me understand my academic performance.
+- Explain a concept I am studying.
+- Answer questions using my assigned classroom context, when available.
+
+The exact information returned depends on the role, available data, and implemented query capabilities.
+
+### Role-aware AI architecture
+
+The AI assistant uses a shared backend entry point rather than requiring separate frontend AI routes for each role.
+
+The backend determines the appropriate context based on the authenticated user.
+
+The intended processing flow is:
+
+1. Receive an authenticated AI request.
+2. Identify the user's role.
+3. Determine the relevant classroom or academic context.
+4. Retrieve the permitted educational information.
+5. Prepare the context for AI processing.
+6. Generate a response through the LLM integration.
+7. Return the response to the frontend.
+
+**Important engineering decision:** AI access should be controlled by backend authorization and data retrieval logic, not merely by hiding frontend options.
+
+### 6.9 Contextual Classroom Selection
+
+For administrative and teacher AI workflows, classroom selection provides context for the questions being asked.
+
+The classroom selector includes debounced search to avoid unnecessary requests while the user is typing.
+
+The AI experience also accommodates student access:
+
+- Students can use AI for general educational questions.
+- When an assigned classroom is available, it can provide relevant academic context.
+
+This avoids forcing every user through the same classroom-selection workflow.
+
+### 6.10 Floating AI Chat Interface
+
+The AI assistant is integrated into the existing application through a floating chat experience.
+
+The implementation uses local browser storage to retain chat state under the key:
+
+`gradelens-floating-ai-chat`
+
+This provides a more accessible interaction model without requiring users to navigate to a separate AI page.
 
 ---
 
-# Data Loading Layer
+## 7. System Architecture
 
-The `DataLoader` class handles reading the JSON datasets.
+GradeLens AI follows a client–server architecture with separate frontend and backend responsibilities.
 
-It loads:
-
-```text
-data/students_data.json
-data/admins_data.json
-```
-
-Student data is converted into a pandas DataFrame:
+### High-level architecture
 
 ```text
-JSON
- ↓
-Python objects
- ↓
-pandas.DataFrame
+                  USER
+                    |
+                    v
+           React Frontend (Vite)
+                    |
+                    v
+             API Communication
+                    |
+                    v
+        Node.js + Express Backend
+                    |
+          +---------+----------+
+          |                    |
+          v                    v
+    Authentication       Business Logic
+    & Authorization      & Services
+          |                    |
+          +---------+----------+
+                    |
+                    v
+             Prisma ORM
+                    |
+                    v
+              PostgreSQL
+                    |
+          +---------+----------+
+          |                    |
+          v                    v
+    Academic Data         AI Assistant
+                               |
+                               v
+                         AI Service Layer
+                               |
+                               v
+                          Groq LLM API
+                               |
+                               v
+                         AI Response
 ```
 
-The administrator dataset remains a collection of administrator profiles that can be selected by the application.
+### Frontend responsibilities
 
-This abstraction also keeps the data source separate from the rest of the application.
+The React frontend handles:
+- User interaction.
+- Role-specific application experiences.
+- Form handling and validation.
+- API communication.
+- Classroom selection.
+- Academic dashboards.
+- Analytics presentation.
+- AI chat interaction.
+
+### Backend responsibilities
+
+The Express backend handles:
+- API routing.
+- Authentication.
+- Authorization.
+- Request validation.
+- Business logic.
+- Database operations.
+- AI request orchestration.
+- Error handling.
+
+### Database responsibilities
+
+PostgreSQL stores the structured application information.
+
+Prisma ORM provides the database access and schema-management layer.
+
+### AI responsibilities
+
+The AI service handles the application-side orchestration of educational queries, relevant context, and LLM communication.
 
 ---
 
-# Student Data Model
+## 8. Technology Stack
 
-The student dataset contains fields such as:
+| Layer | Technology |
+|---|---|
+| Frontend | React |
+| Build Tool | Vite |
+| Language | TypeScript / JavaScript |
+| UI Framework | Bootstrap |
+| Backend | Node.js |
+| API Framework | Express.js |
+| Backend Language | TypeScript |
+| Database | PostgreSQL |
+| ORM | Prisma |
+| Database Hosting | Neon |
+| AI Provider | Groq |
+| AI Integration | LLM API integration |
+| Authentication | JWT |
+| Deployment | Vercel |
+| Version Control | Git and GitHub |
+
+The architecture separates presentation, business logic, database access, and AI orchestration to support maintainability and future development.
+
+## 9. Database Design and Data Relationships
+
+PostgreSQL was selected to manage structured educational data and relationships.
+
+The platform's data model is centered around academic entities and their associations.
+
+### Conceptual data relationships
 
 ```text
-student_id
-student_name
-grade
-class
-region
-homework_submitted
-quiz_score
-quiz_date
-quiz_name
+                 USER
+                   |
+          +--------+--------+
+          |                 |
+        ADMIN             TEACHER
+                            |
+                            v
+                         CLASSROOM
+                            |
+                            v
+                          STUDENT
+                            |
+             +--------------+-------------+
+             |              |             |
+             v              v             v
+          HOMEWORK       SUBMISSION    QUIZ RESULT
+             |
+             v
+       Academic Activity
 ```
 
-For example:
+This is a conceptual overview rather than a complete Prisma entity-relationship diagram.
 
-```json
-{
-  "student_id": "S006",
-  "student_name": "Ananya Gupta",
-  "grade": 8,
-  "class": "8A",
-  "region": "North",
-  "homework_submitted": true,
-  "quiz_score": 94,
-  "quiz_date": "2026-11-08",
-  "quiz_name": "Math Quiz 2"
-}
+The database schema is managed through Prisma migrations.
+
+One example of a schema evolution in the project was the addition of the student–proctor assignment relationship:
+
+`20261028062250_add_student_proctor_assignment`
+
+This reflects the need to represent additional educational relationships as the application evolves.
+
+## 10. AI Integration: Engineering Approach
+
+The AI assistant was designed as an application feature rather than an independent chatbot.
+
+The important engineering challenge is not simply generating an answer. It is retrieving the right information for the correct user before generating that answer.
+
+### AI request lifecycle
+
+```text
+User Message
+     |
+     v
+Authenticated API Request
+     |
+     v
+Identify User and Role
+     |
+     v
+Determine Query Context
+     |
+     v
+Retrieve Relevant Data
+     |
+     v
+Prepare AI Context
+     |
+     v
+Groq LLM Integration
+     |
+     v
+Generate Response
+     |
+     v
+Return Response to UI
 ```
 
-The structured format makes the data suitable for pandas-based analysis.
+### Why this approach?
+
+An unrestricted AI assistant could potentially expose information outside a user's intended academic context.
+
+Therefore, the backend must establish the relevant access boundaries before using academic information in an AI request.
+
+This principle is especially important when the application serves multiple roles with different responsibilities.
+
+### AI service design
+
+The AI functionality is organized in a dedicated backend service:
+
+`backend/src/services/ai-assistant.service.ts`
+
+This keeps AI-specific orchestration separate from frontend presentation and general API routing.
+
+The service is designed to work with the existing classroom retrieval functionality rather than introducing unnecessary duplicate data-access logic.
 
 ---
 
-# Access Control Implementation
+## 11. Important Engineering Decisions
 
-The `AccessControl` class receives an administrator profile.
+### Decision 1: TypeScript-based full-stack architecture
 
-It applies three independent filters.
+The project uses TypeScript in the frontend and backend development stack.
 
-## Grade
+**Why?**
 
-```python
-filtered_df = filtered_df[
-    filtered_df["grade"].isin(
-        self.admin_profile["allowed_grades"]
-    )
-]
-```
+- Better development-time type checking.
+- More explicit interfaces and data contracts.
+- Improved maintainability.
+- Easier understanding of service inputs and outputs.
 
-## Class
+### Decision 2: PostgreSQL instead of JSON-based persistence
 
-```python
-filtered_df = filtered_df[
-    filtered_df["class"].isin(
-        self.admin_profile["allowed_classes"]
-    )
-]
-```
+A relational database provides a more suitable foundation for an application containing connected academic entities.
 
-## Region
+**Why?**
 
-```python
-filtered_df = filtered_df[
-    filtered_df["region"].isin(
-        self.admin_profile["allowed_regions"]
-    )
-]
-```
+- Structured relationships.
+- Referential integrity.
+- Relational queries.
+- Database migrations.
+- A foundation for future scalability.
 
-The result is the dataset that the administrator is allowed to analyze.
+### Decision 3: Prisma ORM
 
----
+Prisma provides a structured way to interact with PostgreSQL.
 
-# AI Query Engine
+It also makes schema evolution and database migrations easier to manage.
 
-The `QueryEngine` is responsible for translating the administrator's natural-language question into a DataFrame analysis.
+### Decision 4: Shared AI API entry point
 
-The current implementation uses:
+Rather than creating separate AI routes for every role, the project uses a shared AI endpoint with role-aware backend processing.
 
-```text
-LangChain
-+
-create_pandas_dataframe_agent
-+
-ChatGroq
-+
-Pandas DataFrame
-```
+**Why?**
 
-The agent is initialized with the already-filtered DataFrame.
+- Less duplicated routing logic.
+- Centralized AI orchestration.
+- Easier maintenance.
+- Consistent authorization boundaries.
 
-Conceptually:
+### Decision 5: Backend-controlled AI context
 
-```text
-filtered_df
-     ↓
-QueryEngine
-     ↓
-Pandas DataFrame Agent
-     ↓
-ChatGroq
-     ↓
-DataFrame operations
-     ↓
-Natural-language response
-```
+The backend determines which educational information is relevant to the current user.
 
-The query engine also supplies the model with information about the DataFrame columns and a date context.
+This is more reliable than treating frontend-selected classroom information as sufficient authorization.
+
+### Decision 6: Floating AI interface
+
+The assistant is accessible within the existing application.
+
+This reduces navigation friction and makes AI assistance part of the regular academic workflow.
+
+### Decision 7: Debounced classroom search
+
+Search requests are delayed until the user pauses typing.
+
+This reduces unnecessary API requests and improves the search interaction.
 
 ---
 
-# LLM Integration
+## 12. Challenges and How They Were Approached
 
-The current implementation uses `ChatGroq` through LangChain.
+### Challenge 1: Designing role-aware application workflows
 
-Configuration is loaded from environment variables:
+**Problem:** Administrators, teachers, and students have different responsibilities.
 
-```text
-GROQ_MODEL
-GROQ_API_KEY
-```
+**Approach:** Introduce role-based application behavior and backend authorization rather than relying on a single shared user experience.
 
-The query engine configures the model with:
+**Learning:** Role-based access control needs to be reflected across both API and UI architecture.
 
-```text
-temperature = 0
-max_tokens = 800
-```
+### Challenge 2: Integrating AI into an existing application
 
-A deterministic temperature is useful for data-analysis tasks where predictable responses are preferred.
+**Problem:** A generic chatbot cannot automatically understand the application's academic structure.
 
-The repository also contains an earlier OpenAI-based implementation in commented code, but the active query engine currently uses Groq.
+**Approach:** Build a dedicated AI service and integrate classroom retrieval into the existing AI request workflow.
 
----
+**Learning:** Context retrieval and application authorization are as important as LLM integration.
 
-# Authentication
+### Challenge 3: Handling classroom context
 
-The project was extended with a frontend authentication layer around the Streamlit application.
+**Problem:** AI questions from administrators, teachers, and students do not necessarily refer to the same academic scope.
 
-The authentication UI provides:
+**Approach:** Use role-aware classroom context, including classroom selection for staff and assigned-classroom context for students where applicable.
 
-```text
-Login
-Sign Up
-```
+**Learning:** AI context should be determined by application rules rather than assumed from user input.
 
-The authentication flow communicates with an external backend authentication API.
+### Challenge 4: Evolving the database schema
 
-The backend returns a JWT after successful authentication.
+**Problem:** New requirements introduce additional relationships between academic entities.
 
-The application stores the token in browser `localStorage`.
+**Approach:** Use Prisma migrations to evolve the relational data model.
 
-The authentication flow is:
+**Learning:** Database design is an ongoing engineering responsibility, not a one-time task.
 
-```text
-Login / Signup
-      ↓
-Authentication API
-      ↓
-JWT
-      ↓
-Browser localStorage
-      ↓
-Authenticated Streamlit session
-      ↓
-Admin Dashboard
-```
+### Challenge 5: Keeping the AI experience inside the application
 
-Logout removes the stored authentication token and returns the user to the authentication interface.
+**Problem:** A separate AI page would create unnecessary navigation and disconnect AI from academic workflows.
 
-The application prevents access to the main dashboard when the user is not authenticated.
+**Approach:** Integrate a floating AI interface into the existing application.
+
+**Learning:** Good AI product design should consider the user's workflow, not only the underlying model.
+
+### Challenge 6: Efficient classroom search
+
+**Problem:** Triggering an API request for every keystroke can create unnecessary traffic.
+
+**Approach:** Implement debounced search in the classroom-selection experience.
+
+**Learning:** Small frontend decisions can improve both perceived performance and backend efficiency.
 
 ---
 
-# Why Authentication and Access Control Are Separate
+## 13. Security Considerations
 
-The project contains two different security concerns.
+GradeLens AI handles educational information, making authorization an important architectural concern.
+
+The following principles guide its implementation:
+
+- Authenticate users before allowing protected operations.
+- Enforce role permissions in backend routes and services.
+- Avoid relying on frontend visibility as an authorization mechanism.
+- Validate incoming request data.
+- Keep database credentials and AI API keys in environment variables.
+- Retrieve AI context according to the authenticated user's permissions.
+- Avoid exposing sensitive academic records through unrestricted AI prompts.
+
+**Security principle:**
+
+An authenticated user should only be able to retrieve information that their role and assigned academic context permit.
+
+A production deployment should additionally undergo security testing, including authorization-boundary tests, rate limiting, audit logging, and validation of AI-generated data access.
+
+---
+
+## 14. Testing and Validation Strategy
+
+A reliable academic platform needs validation across different layers.
+
+The following checklist describes the important verification areas for the project.
 
 ### Authentication
+- [ ] Valid login.
+- [ ] Invalid credentials.
+- [ ] Missing or expired JWT.
+- [ ] Protected route access.
+- [ ] Logout behavior.
 
-Answers:
+### Role-Based Authorization
+- [ ] Admin-specific operations.
+- [ ] Teacher-specific operations.
+- [ ] Student-specific operations.
+- [ ] Unauthorized cross-role requests.
+- [ ] Classroom access boundaries.
 
-> "Who is allowed to enter the application?"
+### Academic Workflows
+- [ ] Classroom retrieval.
+- [ ] Student management.
+- [ ] Teacher management.
+- [ ] Homework creation and retrieval.
+- [ ] Submission handling.
+- [ ] Quiz result retrieval.
 
-### Authorization / Access Control
+### Analytics
+- [ ] Student performance calculations.
+- [ ] Support classification logic.
+- [ ] Empty data handling.
+- [ ] Invalid or missing academic information.
 
-Answers:
+### AI Assistant
+- [ ] Admin classroom queries.
+- [ ] Teacher classroom queries.
+- [ ] Student general questions.
+- [ ] Student assigned-classroom context.
+- [ ] Unauthorized information requests.
+- [ ] Empty AI requests.
+- [ ] LLM provider failures.
+- [ ] Classroom search behavior.
 
-> "Which student data is this administrator allowed to analyze?"
+### Deployment
+- [ ] Frontend production build.
+- [ ] Backend production build.
+- [ ] Environment variable configuration.
+- [ ] Database connectivity.
+- [ ] Frontend-to-backend communication.
+- [ ] CORS configuration.
 
-The architecture separates these responsibilities:
-
-```text
-Authentication
-     ↓
-Authenticated User
-     ↓
-Admin Access Profile
-     ↓
-Authorization Filtering
-     ↓
-AI Data Query
-```
-
-This separation is important because being authenticated does not automatically mean that a user should have access to every dataset.
-
----
-
-# Error Handling
-
-The query engine wraps AI processing in exception handling.
-
-If the agent fails while processing a request, the application returns an error message instead of terminating the dashboard.
-
-The authentication UI also handles:
-
-* Missing credentials
-* Password mismatch
-* Invalid login
-* Authentication server connection failures
-* Missing JWT responses
-* Failed signup requests
-
-This keeps failures visible to the user instead of exposing raw application crashes.
-
----
-
-# Caching
-
-The Streamlit application uses:
-
-```python
-@st.cache_resource
-```
-
-for the data-loading function.
-
-This prevents the application from repeatedly loading the same JSON datasets on every Streamlit rerun.
-
-The cached resource returns:
-
-```text
-students_df
-admins_list
-```
-
-which can then be reused by the dashboard.
+These are validation criteria, not a claim that every test has already passed. The final review should record the actual result of each test.
 
 ---
 
-# Key Engineering Decisions
+## 15. Current Limitations and Areas for Improvement
 
-## 1. Filter Before AI Processing
+A strong engineering project should also recognize what remains to be improved.
 
-The most important architectural decision is to apply access control before initializing the query engine.
+Potential areas for further development include:
 
-Instead of:
+1. **Automated testing:** Expand unit, integration, and end-to-end coverage.
+2. **Audit logging:** Maintain a history of sensitive administrative operations.
+3. **AI evaluation:** Test response correctness, grounding, and consistency.
+4. **AI observability:** Track latency, failures, and token usage.
+5. **Rate limiting:** Protect sensitive API and AI endpoints from abuse.
+6. **Scalable analytics:** Optimize performance as academic datasets grow.
+7. **Advanced reporting:** Add downloadable academic reports and visual summaries.
+8. **Monitoring:** Introduce structured application logs and deployment monitoring.
+9. **AI safety:** Improve handling of ambiguous requests and unauthorized data queries.
+10. **Performance optimization:** Review database indexes, query efficiency, and caching opportunities.
 
-```text
-All Data
- ↓
-AI
- ↓
-Filter
-```
-
-the application uses:
-
-```text
-All Data
- ↓
-Access Control
- ↓
-Authorized Data
- ↓
-AI
-```
-
-This makes the security boundary explicit.
+These improvements provide a roadmap for evolving the platform toward production-grade educational software.
 
 ---
 
-## 2. Modular Data Loading
+## 16. Future Roadmap
 
-Data access is isolated in `DataLoader`.
+### Phase 1 — Platform Reliability
+- Expand automated testing.
+- Strengthen validation.
+- Improve error handling.
+- Review authorization boundaries.
 
-This means the application does not need to know how JSON files are opened when performing access control or AI analysis.
+### Phase 2 — Advanced Analytics
+- Classroom-level performance trends.
+- Historical performance comparisons.
+- Academic progress reports.
+- Improved student support insights.
 
-The same interface can later be adapted to another data source.
+### Phase 3 — AI Intelligence
+- More grounded educational responses.
+- Improved contextual retrieval.
+- Better AI evaluation.
+- More detailed classroom insights.
+- AI-assisted academic recommendations.
 
----
-
-## 3. Separate Query Engine
-
-AI processing is encapsulated in `QueryEngine`.
-
-The Streamlit UI therefore does not need to manage:
-
-* LLM initialization
-* LangChain agent creation
-* DataFrame query execution
-* AI exception handling
-
-This keeps the UI layer simpler.
-
----
-
-## 4. Session-Based Query History
-
-Query history is maintained in Streamlit session state rather than being written to a permanent database.
-
-This is appropriate for the current application scope while keeping the implementation simple.
+### Phase 4 — Scalability
+- Performance optimization.
+- Monitoring and observability.
+- Background processing where needed.
+- Improved data access patterns.
 
 ---
 
-# End-to-End Request Flow
-
-Consider the query:
-
-```text
-Which students haven't submitted their homework?
-```
-
-The application processes it as follows:
-
-```text
-1. User authenticates
-        ↓
-2. Admin profile is selected
-        ↓
-3. AccessControl reads permissions
-        ↓
-4. Student DataFrame is filtered
-        ↓
-5. Filtered DataFrame is passed to QueryEngine
-        ↓
-6. LangChain creates the DataFrame analysis
-        ↓
-7. ChatGroq processes the query
-        ↓
-8. Agent performs the required DataFrame operation
-        ↓
-9. Response is returned
-        ↓
-10. Query + response are added to history
-        ↓
-11. Result is displayed in Streamlit
-```
-
-This flow demonstrates how authentication, authorization, data processing, and AI can be composed into one application.
-
----
-
-# Deployment
-
-The application includes a `render.yaml` configuration for deployment on Render.
-
-The deployment configuration:
-
-```text
-Runtime: Python
-Python Version: 3.11.11
-Plan: Free
-```
-
-The application starts with:
-
-```bash
-streamlit run src/app.py --server.port=$PORT --server.address=0.0.0.0
-```
-
-Dependencies are installed from:
-
-```text
-requirements.txt
-```
-
----
-
-# Technology Stack
-
-| Category             | Technology                   |
-| -------------------- | ---------------------------- |
-| Language             | Python                       |
-| UI                   | Streamlit                    |
-| AI Framework         | LangChain                    |
-| LLM Integration      | LangChain ChatGroq           |
-| Data Analysis        | Pandas                       |
-| Numerical Processing | NumPy                        |
-| Authentication       | JWT-based external auth flow |
-| Browser Storage      | localStorage                 |
-| Configuration        | python-dotenv                |
-| Deployment           | Render                       |
-| Data Source          | JSON                         |
-
----
-
-# Challenges
-
-## Natural-language data analysis
-
-Users can ask questions in many different ways.
-
-The query engine therefore needs to translate flexible language into operations over structured data.
-
-LangChain's pandas DataFrame agent provides the abstraction required to connect the natural-language request with DataFrame operations.
-
----
-
-## Access-controlled AI
-
-Allowing an AI system to analyze unrestricted data would create an unnecessary data-exposure boundary.
-
-The project addresses this by filtering the dataset first:
-
-```text
-Permissions
-    ↓
-Filtered DataFrame
-    ↓
-AI Agent
-```
-
-This was an important lesson in combining AI functionality with authorization logic.
-
----
-
-## Streamlit rerun model
-
-Streamlit applications rerun portions of the application when users interact with widgets.
-
-The project therefore uses:
-
-```text
-st.session_state
-```
-
-for state that needs to survive reruns, including:
-
-* Selected admin
-* Query history
-* Current query
-* Authentication state
-
-The application also uses caching for data loading.
-
----
-
-# Current Limitations
-
-The current implementation has several areas that can be improved.
-
-### JSON data source
-
-The application currently works with local JSON datasets.
-
-A production version could use:
-
-```text
-PostgreSQL
-MongoDB
-```
-
-or another managed database.
-
-### AI agent execution
-
-The current DataFrame agent uses:
-
-```text
-allow_dangerous_code=True
-```
-
-This is an important security consideration because arbitrary code execution capabilities should not be exposed without strong isolation in a production environment.
-
-### Authentication architecture
-
-Authentication is currently connected to an external backend while the Streamlit application handles the frontend/session side.
-
-A production system could centralize authentication and authorization around a dedicated identity service.
-
-### Query persistence
-
-Query history currently exists in Streamlit session state and is not persisted as long-term audit data.
-
-### Static admin profiles
-
-Administrator access scopes currently come from the admin dataset rather than a dedicated persistent authorization service.
-
----
-
-# Future Improvements
-
-Potential improvements include:
-
-* Replace JSON with PostgreSQL or MongoDB
-* Add persistent query history
-* Add audit logging
-* Add centralized role and permission management
-* Add stronger input validation
-* Add rate limiting
-* Add production-grade authentication
-* Add isolated/sandboxed AI execution
-* Add CSV/PDF export
-* Add analytics dashboards
-* Add more complex educational queries
-* Add database-backed reporting
-* Add automated tests
-* Add monitoring and application logging
-
----
-
-# What This Project Demonstrates
-
-This project demonstrates practical experience across both traditional software engineering and AI application development.
-
-### Backend / Software Engineering
-
-* Python application architecture
-* Modular design
-* Authentication
-* JWT handling
-* Access control
-* Session management
-* Error handling
-* Environment configuration
-
-### Data
-
-* JSON data processing
-* pandas DataFrames
-* Data filtering
-* Structured educational datasets
-* Aggregation and analysis
+## 17. What I Learned Building GradeLens AI
+
+GradeLens AI strengthened my understanding of building complete software systems rather than isolated features.
+
+### Full-Stack Engineering
+- Structuring a React application.
+- Building REST APIs with Node.js and Express.
+- Organizing backend services.
+- Handling frontend and backend integration.
+- Managing application state and forms.
+
+### Backend Engineering
+- Authentication and JWT.
+- Role-based authorization.
+- API design.
+- Request validation.
+- Service-layer architecture.
+- Error handling.
+
+### Database Engineering
+- Relational database design.
+- PostgreSQL.
+- Prisma ORM.
+- Schema migrations.
+- Entity relationships.
+- Data retrieval.
 
 ### AI Engineering
+- LLM API integration.
+- AI service orchestration.
+- Context-aware AI workflows.
+- Role-aware data retrieval.
+- Natural-language interaction with structured information.
 
-* LangChain
-* LLM integration
-* Natural-language data querying
-* DataFrame agents
-* Prompt/context construction
-* AI-assisted structured-data analysis
+### Deployment and Development
+- Environment configuration.
+- Git and GitHub workflows.
+- Production deployment.
+- Frontend/backend connectivity.
+- Debugging deployment and integration issues.
 
-### Frontend
-
-* Streamlit
-* Interactive widgets
-* Session state
-* Query history
-* Responsive authentication UI
+Most importantly, I learned that adding AI to a product is not just about connecting an LLM API. It requires thoughtful data retrieval, authorization, context management, and integration with the application's existing architecture.
 
 ---
 
-# Key Takeaway
+## 18. Project Impact and Engineering Value
 
-The main engineering concept demonstrated by this project is the combination of **authorization and AI data analysis**.
+GradeLens AI brings several related academic workflows into one application.
 
-The system does not simply send the complete student dataset to an LLM.
+Its engineering value comes from combining:
 
-Instead, it follows:
+- A centralized education management system.
+- Role-based application access.
+- Structured academic data.
+- Student performance analytics.
+- AI-assisted natural-language interaction.
+- A modular TypeScript backend.
+- Relational database architecture.
 
-```text
-                    User
-                     ↓
-              Authentication
-                     ↓
-             Admin Permission
-                     ↓
-              AccessControl
-                     ↓
-             Authorized Data
-                     ↓
-              LangChain Agent
-                     ↓
-                  LLM
-                     ↓
-             DataFrame Analysis
-                     ↓
-               AI Response
-```
+The project demonstrates how conventional full-stack engineering and AI capabilities can work together to solve a domain-specific problem.
 
-This architecture demonstrates an important principle for AI-powered applications:
+**The key idea is to make educational information easier to manage, understand, and access while respecting application-level permissions.**
 
-> **AI should operate within the data boundaries established by the application's authorization layer.**
+---
 
-That separation makes the system easier to reason about and provides a foundation for replacing the current JSON datasets with a production database and expanding the authorization model in the future.
+## 19. Conclusion
+
+GradeLens AI represents an effort to build a complete, AI-enabled educational management platform.
+
+The project goes beyond a basic CRUD application by combining multiple academic workflows, relational data management, role-based authorization, performance analytics, and AI-assisted interaction.
+
+The most important engineering lesson was understanding that a useful AI-powered product requires more than a model integration.
+
+It requires a well-designed application architecture, reliable backend services, structured data, appropriate access boundaries, and an interface that fits the user's workflow.
+
+**GradeLens AI is a practical demonstration of my growth in full-stack software development and applied AI engineering.**
+
+---
+
+## 20. Project Resources
+
+- **Live Application:** [https://grade-lens-ai-six.vercel.app/]
+- **GitHub Repository:** [https://github.com/sunny-raj-sah/GradeLens-AI.git]
+- **Product Walkthrough:** [https://drive.google.com/file/d/1yQ1OGfDZWrqAw0yItCoePeJQoX586k38/view?usp=sharing]
+ 
+
+**Built with React, TypeScript, Node.js, Express, PostgreSQL, Prisma, and Groq.**

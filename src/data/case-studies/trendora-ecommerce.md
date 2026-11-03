@@ -1,4 +1,4 @@
-# Trendora — MERN Shopping Site
+# Trendora Fashion  
 
 ## Project Overview
 

@@ -466,7 +466,7 @@ export const skills = {
 
 export const projects = [
   {
-    name: "AI Document Q&A System ",
+    name: "Ask-The-Book",
     hash: "rag001",
     sectionId: "project-pdf-rag",
     description:
@@ -524,7 +524,7 @@ export const projects = [
   },
 
   {
-    name: "Workasana — Task Management Application",
+    name: "Workasana",
     hash: "workasana003",
     sectionId: "project-workasana",
     description:
@@ -575,7 +575,7 @@ repo:
 caseStudy: "kaviospix",
 },
   {
-    name: "Anvaya CRM — Sales & Lead Management System",
+    name: "Anvaya CRM",
     hash: "anvaya005",
     sectionId: "project-anvaya-crm",
     description:
@@ -608,7 +608,7 @@ caseStudy: "kaviospix",
   // ---------------------------------------------------------
 
   {
-    name: "Trendora - MERN Shopping Site",
+    name: "Trendora Fashion",
     hash: "ecom006",
      sectionId: "project-trendora-ecommerce",
     description:
@@ -633,23 +633,25 @@ caseStudy: "kaviospix",
   },
 
   {
-    name: "AI Admin Query Assistant",
+    name: "GradeLens AI",
     hash: "ai007",
      sectionId: "project-langchain-ai-admin",
     description:
-      "Developed an AI-powered admin dashboard that enables natural-language queries over educational datasets using LangChain, role-based access control (RBAC), and dynamic analytics.",
+      "Developed an AI-powered admin dashboard that enables natural-language queries over educational datasets using LLM, role-based access control (RBAC), and dynamic analytics.",
     tags: [
-      "Python",
-      "LangChain",
-      "Streamlit",
-      "OpenAI",
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Groq",
       "RBAC",
     ],
     stars: "Featured",
     link:
-      "https://ai-powered-admin-panel.onrender.com/",
+      "https://grade-lens-ai-six.vercel.app/",
     repo:
-      "https://github.com/sunny-raj-sah/LangChain-AI-Admin-Query-Assistant.git",
+      "https://github.com/sunny-raj-sah/GradeLens-AI.git",
 
     // caseStudy: "/case-studies/dumroo-ai-admin",
     // blog: "https://hashnode.com/@sunnyraj",

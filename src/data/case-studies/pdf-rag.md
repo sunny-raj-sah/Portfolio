@@ -1,4 +1,4 @@
- #  AI Document Q&A System  
+ #  Ask-The-Book
  
 ### Building a grounded question-answering system over a 637-page technical document
 
