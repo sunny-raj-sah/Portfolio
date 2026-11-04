@@ -358,16 +358,29 @@ export const education = [
 
 export const experience = [
   {
+  company: "neoG Camp",
+  role: "Full Stack Developer Trainee",
+  period: "Apr 2026 — Present",
+  location: "Remote",
+  points: [
+    "Building full-stack applications using React, JavaScript, Node.js, Express.js, and MongoDB through hands-on projects.",
+    "Implementing REST APIs, JWT authentication, database integration, and real-time communication using Socket.IO.",
+    "Improving application functionality, responsive UI, and code quality by incorporating mentor feedback and debugging issues.",
+    "Strengthening problem-solving and software engineering skills through practical coding and technical interview preparation.",
+  ],
+  hash: "neog001",
+},
+  {
     company: "Dumroo.ai",
     role: "Software Development Intern",
-    period: "Dec 2025 — Mar 2026",
+    period: "Dec 2025 — Apr 2026",
     location: "Remote",
     points: [
       "Developed application features using React, TypeScript, and modern JavaScript with reusable components and frontend-backend integration.",
       "Worked on AI-powered functionality involving Retrieval-Augmented Generation (RAG) and LLM-based workflows.",
       "Contributed to feature development, debugging, API integration, and improving application workflows.",
     ],
-    hash: "dum001",
+    hash: "dum002",
   },
   {
     company: "Tech Mahindra COE",
@@ -379,7 +392,7 @@ export const experience = [
       "Built full-stack applications while strengthening OOP, backend development, database, and frontend engineering fundamentals.",
       "Practiced REST API development, API testing with Postman, SQL operations, and frontend-backend integration.",
     ],
-    hash: "tm002",
+    hash: "tm003",
   },
   {
     company: "Edu-versity",
@@ -390,7 +403,7 @@ export const experience = [
       "Developed responsive web interfaces using HTML, CSS, JavaScript, and React.",
       "Worked on API integration, reusable UI components, and frontend application workflows.",
     ],
-    hash: "edu003",
+    hash: "edu004",
   },
 ];
 
