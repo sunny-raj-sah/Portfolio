@@ -308,7 +308,7 @@ export const profile = {
     "AI Engineer",
   ],
   tagline:
-  "I build full-stack web applications, AI-powered systems, and real-time solutions using React, Node.js, MongoDB, WebSockets, Socket.io, and LangChain.",
+  "I build full-stack web applications, AI-powered systems, and real-time solutions using React.js, Node.js, MongoDB, WebSockets, Socket.io, and LangChain.",
   location: "Lakhisarai, Bihar, India (Open to Relocation)",
   email: "sunnyraj01000@gmail.com",
   github: "https://github.com/sunny-raj-sah",
@@ -323,7 +323,7 @@ export const profile = {
 
 export const about = {
   summary:
-    "I'm a Full Stack Engineer with hands-on experience building web applications, REST APIs, JWT-based authentication, real-time applications, and AI-powered systems using React, Node.js, Express.js, MongoDB, WebSockets, Socket.io, LangChain, and Retrieval-Augmented Generation (RAG). I enjoy working across the frontend, backend, data, real-time, and AI layers to build practical and well-structured applications while continuously improving my Data Structures, Algorithms, and System Design skills.",
+    "I'm a Full Stack Engineer with hands-on experience building web applications, REST APIs, JWT-based authentication, real-time applications, and AI-powered systems using React.js, Node.js, Express.js, MongoDB, WebSockets, Socket.io, LangChain, and Retrieval-Augmented Generation (RAG). I enjoy working across the frontend, backend, data, real-time, and AI layers to build practical and well-structured applications while continuously improving my Data Structures, Algorithms, and System Design skills.",
   highlights: [
     { label: "Experience", value: "Intern + Projects" },
     { label: "Projects", value: "10+" },
@@ -363,7 +363,7 @@ export const experience = [
   period: "Apr 2026 — Present",
   location: "Remote",
   points: [
-    "Building full-stack applications using React, JavaScript, Node.js, Express.js, and MongoDB through hands-on projects.",
+    "Building full-stack applications using React.js, JavaScript, Node.js, Express.js, and MongoDB through hands-on projects.",
     "Implementing REST APIs, JWT authentication, database integration, and real-time communication using Socket.IO.",
     "Improving application functionality, responsive UI, and code quality by incorporating mentor feedback and debugging issues.",
     "Strengthening problem-solving and software engineering skills through practical coding and technical interview preparation.",
@@ -376,7 +376,7 @@ export const experience = [
     period: "Dec 2025 — Apr 2026",
     location: "Remote",
     points: [
-      "Developed application features using React, TypeScript, and modern JavaScript with reusable components and frontend-backend integration.",
+      "Developed application features using React.js, TypeScript, and modern JavaScript with reusable components and frontend-backend integration.",
       "Worked on AI-powered functionality involving Retrieval-Augmented Generation (RAG) and LLM-based workflows.",
       "Contributed to feature development, debugging, API integration, and improving application workflows.",
     ],
@@ -388,7 +388,7 @@ export const experience = [
     period: "Jan 2025 — Apr 2025",
     location: "COE Center, GIET University",
     points: [
-      "Completed hands-on software development training covering Java, Spring Boot, React, REST APIs, SQL, and application development.",
+      "Completed hands-on software development training covering Java, Spring Boot, React.js, REST APIs, SQL, and application development.",
       "Built full-stack applications while strengthening OOP, backend development, database, and frontend engineering fundamentals.",
       "Practiced REST API development, API testing with Postman, SQL operations, and frontend-backend integration.",
     ],
@@ -400,7 +400,7 @@ export const experience = [
     period: "Apr 2023 — Jun 2023",
     location: "Remote",
     points: [
-      "Developed responsive web interfaces using HTML, CSS, JavaScript, and React.",
+      "Developed responsive web interfaces using HTML, CSS, JavaScript, and React.js.",
       "Worked on API integration, reusable UI components, and frontend application workflows.",
     ],
     hash: "edu004",
@@ -449,7 +449,7 @@ export const skills = {
   ],
 
   frontend: [
-    "React",
+    "React.js",
     "JavaScript",
     "Bootstrap",
     "HTML",
@@ -485,9 +485,9 @@ export const projects = [
     description:
       "Built a Retrieval-Augmented Generation (RAG) system for grounded question answering over a 637-page PDF, using document chunking, embeddings, semantic retrieval, and LLM-based response generation.",
     tags: [
-      "React",
+      "React.js",
       "Node.js",
-      "Express",
+      "Express.js",
       "RAG",
       "Hugging Face",
       "Groq",
@@ -541,9 +541,9 @@ export const projects = [
     description:
       "Built a real-time chat platform with JWT authentication, public rooms, private 1:1 messaging, typing indicators, presence, message delivery states, and dynamic room creation using Socket.io over WebSockets.",
     tags: [
-      "React",
+      "React.js",
       "Node.js",
-      "Express",
+      "Express.js",
       "JWT",
       "Socket.io",
       "Bootstrap",
@@ -565,11 +565,11 @@ export const projects = [
     hash: "workasana004",
     sectionId: "project-workasana",
     description:
-      "Built a full-stack task management system with React, Node.js, Express, and MongoDB, implementing JWT authentication, task assignment, project and team management, dashboards, filtering, and productivity workflows.",
+      "Built a full-stack task management system with React.js, Node.js, Express.js, and MongoDB, implementing JWT authentication, task assignment, project and team management, dashboards, filtering, and productivity workflows.",
     tags: [
-      "React",
+      "React.js",
       "Node.js",
-      "Express",
+      "Express.js",
       "MongoDB",
       "JWT",
       "Context API",
@@ -591,9 +591,9 @@ name: "KaviosPix",
 hash: "kaviospix005",
 sectionId: "project-kaviospix",
 description:
-"Built a full-stack photo management platform with Google OAuth, JWT authentication, album-level authorization, protected image serving, image uploads, album sharing, tags, favorites, and comments using React, Node.js, Express.js, and MongoDB.",
+"Built a full-stack photo management platform with Google OAuth, JWT authentication, album-level authorization, protected image serving, image uploads, album sharing, tags, favorites, and comments using React.js, Node.js, Express.js, and MongoDB.",
 tags: [
-"React",
+"React.js",
 "Node.js",
 "Express.js",
 "MongoDB",
@@ -618,9 +618,9 @@ caseStudy: "kaviospix",
     description:
       "Developed a CRM system for structured lead management and customer interactions with JWT authentication, lead lifecycle tracking, status management, search and filtering, sales-agent workflows, and responsive dashboards.",
     tags: [
-      "React",
+      "React.js",
       "Node.js",
-      "Express",
+      "Express.js",
       "MongoDB",
       "REST API",
       "JWT",
@@ -651,7 +651,7 @@ caseStudy: "kaviospix",
     description:
       "Built a full-stack e-commerce application using the MERN stack with JWT authentication, product search, category filtering, shopping cart, wishlist management, and responsive user interfaces.",
     tags: [
-      "React",
+      "React.js",
       "Node.js",
       "Express.js",
       "MongoDB",
